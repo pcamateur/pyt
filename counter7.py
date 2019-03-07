@@ -1,6 +1,6 @@
 # preset function
-def process_uinte (input_value,Base_Num) :
-    pass
+#def process_uinte (input_value,Base_Num) :
+#    pass
 
 # greeting sentence
 helloword = 'Please input Numbers(Exit please type 0):'
