@@ -8,15 +8,11 @@ def compressImage(srcPath, dstPath):
     # Traversal the files name in the source directory.
     for filename in os.listdir(srcPath):
     
-        # if the directory does not exist,make it.Keep level structure.
-        if not os.path.exists(srcPath):
-            os.makedirs(dstPath)
-
         # Splicing complete file or folder paths.
         srcFile = os.path.join(srcPath, filename)
         dstFile = os.path.join(dstPath, filename)
 
-       # if it's a file,executed it.
+        # if it's a file,executed it.
         if os.path.isfile(srcFile):
            
             try:
@@ -46,7 +42,17 @@ def compressImage(srcPath, dstPath):
             compressImage(srcFile, dstFile)
 
 
-if __name__ == '__main__':
+def main():
+
+    # if the directory does not exist,make it.Keep level structure.
+    if not os.path.exists("./prepare"):
+        os.makedirs("./prepare")
+
+    if not os.path.exists("./compress"):
+        os.makedirs("./compress")
+
+    if not os.path.exists("./finish"):
+        os.makedirs("./finish")
 
     # Traversal the image to be added. 
     path = os.walk("./prepare")
@@ -69,3 +75,7 @@ if __name__ == '__main__':
     # Traversal the image to be compression.
     compressImage("./finish", "./compress")
 
+
+if __name__ == '__main__':
+
+    main()
