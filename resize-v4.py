@@ -24,17 +24,17 @@ def compressImage(srcPath, dstPath):
                 w, h = sImg.size
 
                 # Set the compression size and options. ! Alert That The Dimensions Are In BRACKETS.
-                dImg = sImg.resize((int(w / 2), int(h / 2), Image.ANTIALIAS))
+                dImg = sImg.resize((int(w / 2), int(h / 2)), Image.ANTIALIAS)
 
                 # It can be used "srcFile" orginal path to save,or change the suffix to save. 
                 # After the save function,it can be add compression encoding options such as JPG.
                 dImg.save(dstFile)
 
-                print(dstFile + "Done!")
+                print(dstFile + " :Done!")
 
             except Exception:
                 
-                print(dstFile + "Fail!")
+                print(dstFile + " :Fail!")
 
         # if it's a folder,Recursion.
         if os.path.isdir(srcFile):
@@ -53,6 +53,13 @@ def main():
 
     if not os.path.exists("./finish"):
         os.makedirs("./finish")
+
+    path = os.walk("../")
+
+    for root, dirs, files in path:
+        for f in files:
+            if f.endswith(".jpg"):
+                shutil.move(os.path.join(root, f), os.path.join("./prepare", f))
 
     # Traversal the image to be added. 
     path = os.walk("./prepare")
