@@ -54,11 +54,11 @@ def main():
     if not os.path.exists("./finish"):
         os.makedirs("./finish")
 
-    path = os.walk("../")
+    path = os.walk("./")
 
     for root, dirs, files in path:
         for f in files:
-            if f.endswith(".png"):
+            if f.endswith(".png") or f.endswith(".jpg"):
                 shutil.move(os.path.join(root, f), os.path.join("./prepare", f))
 
     # Traversal the image to be added. 
