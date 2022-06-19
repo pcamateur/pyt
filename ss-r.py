@@ -1,4 +1,5 @@
 from time import time as t
+from math import sqrt as sq
 st = t()
 li = list()
 
@@ -16,10 +17,3 @@ et = t()
 
 print(len(li))
 print(et - st)
-
-
-# def ssr(stn, etn, a):
-#     if a == 1:
-#         return 1
-#     else:
-#         return 
