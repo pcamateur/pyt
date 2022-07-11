@@ -44,3 +44,5 @@ def gcf(a, b):
             return small * reduction
         else:
             a, b = small, big - small
+
+print(gcf(65, 26))
