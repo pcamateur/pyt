@@ -22,4 +22,9 @@ def gcf(a, b):
             a, b = small, big - small
 
 
-print(gcf(1024,768))
+print(gcf(240,350))
+
+def lcd(a, b):
+    return a * b // gcf(a, b)
+
+print(lcd(240,350))
