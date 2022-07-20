@@ -1,17 +1,13 @@
-from pampy import _,match
-
-class Test():
-    def __init__(self, arr, patt):
-        self.arr = arr
-        self.patt = patt
+def adds(a, b):
+    if str(a).isdigit() and str(b).isdigit():
+        print('That is a digit!')
+        return str(a) + str(b)
         
-    def run(self):
-        return match(self.arr, self.patt, lambda x: f'b is: {x}')
-    
-arr = ['a', 1, 'b', 2, 'c', 3, 'd', 4, 'e', 5]
+    else:
+        print('That is a text!')
+        return a + b
+        
 
-patt = ['a', 1, 'b', 2, 'c',_, 'd', 4, 'e', 5]
+s = adds(True, False)
 
-the_test = Test(arr, patt)
-
-print(the_test.run())
+print(s)
