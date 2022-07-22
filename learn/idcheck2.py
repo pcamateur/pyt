@@ -1,6 +1,5 @@
-# from re import I
 import json
-from tkinter import E
+from datetime import datetime as dt
 
 def getID():
     ids = input('Please input you IDs number:')
@@ -38,9 +37,9 @@ def myids(ids):
     mydisinfo = ids
 
     if int(mydisinfo[-1]) % 2 == 0:
-        sexual = 'Female'
+        sexual = '女'
     else:
-        sexual = 'Male'
+        sexual = '男'
 
     return sexual
 
@@ -49,7 +48,7 @@ def mybirthday(ids):
 
     mybirthdays = ids
 
-    date = f'{mybirthdays[6:10]} - {mybirthdays[10:12]} - {mybirthdays[12:14]}'
+    date = f'{mybirthdays[6:10]} 年 {mybirthdays[10:12]} 月 {mybirthdays[12:14]} 日'
 
     return date
 
@@ -113,21 +112,43 @@ def xingzuo(ids):
 
     return xvz 
     
+    
+def sengx(ids):
+    
+    animal = '猴鸡狗猪鼠牛虎兔龙蛇马羊'
+    
+    anv = animal[int(ids[6:10]) % 12]
+    
+    return anv 
+
+
+def ages(ids):
+    today = dt.today()
+    
+    brith = int(ids[6:10])
+    
+    age = today.year - brith
+    
+    return age
+
 
 def run():
     
     ids = getID()
 
-    print(ids + str(check(ids)))
+    print('身份证号码： ', ids + str(check(ids)))
 
-    print(myids(ids))
+    print('性别： ' ,myids(ids))
 
-    print(mybirthday(ids))
+    print('出生日期： ', mybirthday(ids))
 
-    print(local(datasl, ids))
+    print('地址： ', local(datasl, ids))
 
-    print(xingzuo(ids))
+    print('星座： ', xingzuo(ids))
+    
+    print('生肖： ', sengx(ids))
 
+    print('年龄： ', ages(ids))
 
 if __name__ == '__main__':
     run()
