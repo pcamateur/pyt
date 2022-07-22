@@ -1,6 +1,4 @@
-from base64 import encode
 import json
-from textwrap import indent
 
 files = f'D:\git\github\pcamateur\pyt\learn\\2020.json'
 
