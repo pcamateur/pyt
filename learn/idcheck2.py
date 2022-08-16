@@ -56,7 +56,7 @@ def mybirthday(ids):
 files = f'D:\git\github\pcamateur\pyt\learn\\2020.json'
 
 with open(files, 'r', encoding='utf8') as fis:
-    datasl = json.load(fis, encoding = 'utf8')
+    datasl = json.load(fis)
 
 
 def local(datasl, query):
